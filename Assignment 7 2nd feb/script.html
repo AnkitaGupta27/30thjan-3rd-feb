@@ -13,13 +13,13 @@
     </form>
     <script type="text/javascript">
 function createTable(){
-    row=window.prompt("Input number of rows: ");
-    column=window.prompt("Input number of columns");
-    for(var i=0;i<parseInt(row,10);i++){
-        var d=document.getElementById("myTable").insertRow(d);
-        for(var j=0;j<parseInt(column,10);j++){
-            var e=d.insertCell(j);
-            e.innerHTML=(i+1)*(j+1);
+    row=prompt("Input number of rows: ");
+    column=prompt("Input number of columns");
+    for(var i=0;i<row;i){
+        var d=document.getElementById("myTable").insertRow(i++);
+        for(var j=0;j<column;j){
+            var e=d.insertCell(j++);
+            e.innerHTML=i*j;
         }
     }
 }

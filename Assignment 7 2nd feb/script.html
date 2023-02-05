@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table  id="myTable" border="1"></table>
+    <form>
+        <input type="button" onclick="createTable()" value="Create a Table"/>
+    </form>
+    <script type="text/javascript">
+function createTable(){
+    row=window.prompt("Input number of rows: ");
+    column=window.prompt("Input number of columns");
+    for(var i=0;i<parseInt(row,10);i++){
+        var d=document.getElementById("myTable").insertRow(d);
+        for(var j=0;j<parseInt(column,10);j++){
+            var e=d.insertCell(j);
+            e.innerHTML=(i+1)*(j+1);
+        }
+    }
+}
+    </script>
+</body>
+</html>

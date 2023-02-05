@@ -1,0 +1,48 @@
+create table Professor(p_id int AUTO_INCREMENT primary key,
+p_name varchar(100),
+p_age int,
+p_address varchar(100),
+course int);
+
+create table Subject(
+sub_id int AUTO_INCREMENT primary key,
+s_name  varchar(200),
+p_id int ,foreign key(p_id) references Professor(p_id));
+
+
+insert into Professor(p_id,p_name,p_age,p_address,course) values(1001,'Rahul',32,'Kolkata',3001);
+insert into Professor(p_name,p_age,p_address,course) values('Martin',40,'Bangalore',3002);
+insert into Professor(p_name,p_age,p_address,course) values('Sehwag',41,'Bhopal',3003);
+insert into Professor(p_name,p_age,p_address,course) values('Rohit',35,'Goa',3004);
+
+select * from Professor;
+select * from Subject;
+
+insert into Subject(sub_id,s_name,p_id) values(3001,'Cpp',1001);
+insert into Subject(s_name,p_id) values('Java',1001);
+insert into Subject(s_name,p_id) values('DBMS',1002);
+insert into Subject(s_name,p_id) values('SQL',1002);
+insert into Subject(s_name,p_id) values('Digital',1003);
+insert into Subject(s_name,p_id) values('OOps',1004);
+insert into Subject(s_name,p_id) values('HTML',1001);
+insert into Subject(s_name,p_id) values('Embedded',1003);
+insert into Subject(s_name,p_id) values('Analog',1003);
+
+
+create table Course(
+sub_id int primary key,
+cname varchar(100),
+c_id int, foreign key(sub_id) references Subject(sub_id));
+
+
+select * from Course;
+
+insert into Course(sub_id,cname,c_id) values(3001,'Computer Science', 2001);
+insert into Course(sub_id,cname,c_id) values(3002,'Computer Science', 2001);
+insert into Course(sub_id,cname,c_id) values(3007,'Computer Science', 2002);
+insert into Course(sub_id,cname,c_id) values(3008,'Electronics and Communication', 2002);
+insert into Course(sub_id,cname,c_id) values(3009,'Electronics and Communication', 2002);
+insert into Course(sub_id,cname,c_id) values(3003,'Computer Science', 2003);
+insert into Course(sub_id,cname,c_id) values(3004,'Computer Science', 2003);
+insert into Course(sub_id,cname,c_id) values(3005,'Electronics and Communication', 2004);
+insert into Course(sub_id,cname,c_id) values(3006,'	Computer Science', 2004);
